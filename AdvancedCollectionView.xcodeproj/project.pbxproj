@@ -13,6 +13,11 @@
 		4D7EF5061E18DD520046ECAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7EF5041E18DD520046ECAD /* Main.storyboard */; };
 		4D7EF5111E18DD520046ECAD /* AdvancedCollectionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7EF5101E18DD520046ECAD /* AdvancedCollectionViewTests.swift */; };
 		4D7EF51C1E18DD520046ECAD /* AdvancedCollectionViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7EF51B1E18DD520046ECAD /* AdvancedCollectionViewUITests.swift */; };
+		4D7EF52B1E18DD8B0046ECAD /* CollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7EF5291E18DD8B0046ECAD /* CollectionViewItem.swift */; };
+		4D7EF52C1E18DD8B0046ECAD /* CollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D7EF52A1E18DD8B0046ECAD /* CollectionViewItem.xib */; };
+		4DE06B2A1E18EFEC000776FB /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE06B291E18EFEC000776FB /* HeaderView.xib */; };
+		4DE06B2C1E18F4AE000776FB /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE06B2B1E18F4AE000776FB /* HeaderView.swift */; };
+		4DE06B2E1E195A5C000776FB /* StickyHeadersLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE06B2D1E195A5C000776FB /* StickyHeadersLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		4D7EF5171E18DD520046ECAD /* AdvancedCollectionViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedCollectionViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7EF51B1E18DD520046ECAD /* AdvancedCollectionViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedCollectionViewUITests.swift; sourceTree = "<group>"; };
 		4D7EF51D1E18DD520046ECAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D7EF5291E18DD8B0046ECAD /* CollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewItem.swift; sourceTree = "<group>"; };
+		4D7EF52A1E18DD8B0046ECAD /* CollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewItem.xib; sourceTree = "<group>"; };
+		4DE06B291E18EFEC000776FB /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		4DE06B2B1E18F4AE000776FB /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		4DE06B2D1E195A5C000776FB /* StickyHeadersLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeadersLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,11 @@
 			children = (
 				4D7EF4FE1E18DD510046ECAD /* AppDelegate.swift */,
 				4D7EF5001E18DD510046ECAD /* ViewController.swift */,
+				4D7EF5291E18DD8B0046ECAD /* CollectionViewItem.swift */,
+				4D7EF52A1E18DD8B0046ECAD /* CollectionViewItem.xib */,
+				4DE06B2B1E18F4AE000776FB /* HeaderView.swift */,
+				4DE06B291E18EFEC000776FB /* HeaderView.xib */,
+				4DE06B2D1E195A5C000776FB /* StickyHeadersLayout.swift */,
 				4D7EF5021E18DD510046ECAD /* Assets.xcassets */,
 				4D7EF5041E18DD520046ECAD /* Main.storyboard */,
 				4D7EF5071E18DD520046ECAD /* Info.plist */,
@@ -234,6 +249,8 @@
 			files = (
 				4D7EF5031E18DD510046ECAD /* Assets.xcassets in Resources */,
 				4D7EF5061E18DD520046ECAD /* Main.storyboard in Resources */,
+				4D7EF52C1E18DD8B0046ECAD /* CollectionViewItem.xib in Resources */,
+				4DE06B2A1E18EFEC000776FB /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D7EF5011E18DD510046ECAD /* ViewController.swift in Sources */,
+				4DE06B2E1E195A5C000776FB /* StickyHeadersLayout.swift in Sources */,
 				4D7EF4FF1E18DD510046ECAD /* AppDelegate.swift in Sources */,
+				4D7EF52B1E18DD8B0046ECAD /* CollectionViewItem.swift in Sources */,
+				4DE06B2C1E18F4AE000776FB /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +525,7 @@
 				4D7EF5221E18DD520046ECAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D7EF5231E18DD520046ECAD /* Build configuration list for PBXNativeTarget "AdvancedCollectionViewTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +534,7 @@
 				4D7EF5251E18DD520046ECAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D7EF5261E18DD520046ECAD /* Build configuration list for PBXNativeTarget "AdvancedCollectionViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +543,7 @@
 				4D7EF5281E18DD520046ECAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

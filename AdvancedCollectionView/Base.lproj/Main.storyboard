@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -653,7 +655,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="AdvancedCollectionView" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -679,11 +681,92 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="AdvancedCollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ri1-Lh-wNH">
+                                <rect key="frame" x="0.0" y="30" width="480" height="240"/>
+                                <clipView key="contentView" drawsBackground="NO" id="k22-wI-KdM">
+                                    <rect key="frame" x="1" y="1" width="478" height="238"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView selectable="YES" allowsMultipleSelection="YES" id="9lT-U9-bd9">
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="238"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="fkA-aI-6mq">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="PdN-rm-ZY7"/>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="6AQ-HQ-xrW"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="e6Z-GG-Sh5">
+                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1t6-DG-ryw">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="00l-Wx-j4R">
+                                <rect key="frame" x="18" y="6" width="112" height="18"/>
+                                <buttonCell key="cell" type="check" title="Show Sections" bezelStyle="regularSquare" imagePosition="left" inset="2" id="MFA-fw-6Zs">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="showHideSectionsWithSender:" target="XfG-lQ-9wD" id="uNF-lz-6BR"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lYY-bi-zDL">
+                                <rect key="frame" x="377" y="-2" width="89" height="32"/>
+                                <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="taD-mf-TJ8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="addImageWithSender:" target="XfG-lQ-9wD" id="44D-Eg-0ri"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="viZ-NA-3hJ">
+                                <rect key="frame" x="288" y="-2" width="89" height="32"/>
+                                <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Go6-j2-gIC">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeImageWithSender:" target="XfG-lQ-9wD" id="NyH-Jd-A5e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Ri1-Lh-wNH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="3rm-n2-FoU"/>
+                            <constraint firstItem="lYY-bi-zDL" firstAttribute="centerY" secondItem="00l-Wx-j4R" secondAttribute="centerY" id="50N-Wb-svh"/>
+                            <constraint firstItem="00l-Wx-j4R" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="HPS-gO-d29"/>
+                            <constraint firstItem="viZ-NA-3hJ" firstAttribute="centerY" secondItem="lYY-bi-zDL" secondAttribute="centerY" id="Iyw-JO-hZc"/>
+                            <constraint firstItem="viZ-NA-3hJ" firstAttribute="width" secondItem="lYY-bi-zDL" secondAttribute="width" id="YZt-MY-kKB"/>
+                            <constraint firstItem="00l-Wx-j4R" firstAttribute="top" secondItem="Ri1-Lh-wNH" secondAttribute="bottom" constant="8" symbolic="YES" id="bir-Bw-83Q"/>
+                            <constraint firstItem="Ri1-Lh-wNH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="ezF-PM-I57"/>
+                            <constraint firstAttribute="trailing" secondItem="Ri1-Lh-wNH" secondAttribute="trailing" id="vdr-Op-bkc"/>
+                            <constraint firstAttribute="trailing" secondItem="lYY-bi-zDL" secondAttribute="trailing" constant="20" id="x4h-f4-oQ3"/>
+                            <constraint firstAttribute="bottom" secondItem="Ri1-Lh-wNH" secondAttribute="bottom" constant="30" id="xAq-be-LmA"/>
+                            <constraint firstItem="lYY-bi-zDL" firstAttribute="leading" secondItem="viZ-NA-3hJ" secondAttribute="trailing" constant="12" id="xMy-bG-LJe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="lYY-bi-zDL" id="ZaH-L2-EnP"/>
+                        <outlet property="collectionView" destination="9lT-U9-bd9" id="BHJ-HO-GBO"/>
+                        <outlet property="removeButton" destination="viZ-NA-3hJ" id="mXL-si-6hN"/>
+                        <outlet property="showSectionButton" destination="00l-Wx-j4R" id="hrU-u6-GHP"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

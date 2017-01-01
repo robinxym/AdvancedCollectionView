@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CollectionViewItem" customModule="AdvancedCollectionView" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="N6Q-I0-KMR" id="YuJ-Bo-HWL"/>
+                <outlet property="textField" destination="UK1-2l-OeG" id="X3U-TQ-vLL"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N6Q-I0-KMR">
+                    <rect key="frame" x="0.0" y="30" width="480" height="242"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="eHc-qz-hDv"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UK1-2l-OeG">
+                    <rect key="frame" x="-2" y="0.0" width="484" height="30"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="Nn3-so-InQ">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="UK1-2l-OeG" secondAttribute="bottom" id="01T-WP-Qjw"/>
+                <constraint firstItem="UK1-2l-OeG" firstAttribute="top" secondItem="N6Q-I0-KMR" secondAttribute="bottom" id="3tG-rh-pPS"/>
+                <constraint firstAttribute="trailing" secondItem="UK1-2l-OeG" secondAttribute="trailing" id="9RI-DA-xSr"/>
+                <constraint firstAttribute="bottom" secondItem="N6Q-I0-KMR" secondAttribute="bottom" constant="30" id="NRX-xL-aY4"/>
+                <constraint firstAttribute="trailing" secondItem="N6Q-I0-KMR" secondAttribute="trailing" id="gqk-Fr-5Na"/>
+                <constraint firstItem="N6Q-I0-KMR" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="kt7-hl-fwD"/>
+                <constraint firstItem="UK1-2l-OeG" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="rP2-O1-Nyl"/>
+                <constraint firstItem="N6Q-I0-KMR" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="tX9-hy-8F1"/>
+            </constraints>
+        </customView>
+        <collectionViewItem id="IoT-7j-vEO" customClass="CollectionViewItem" customModule="AdvancedCollectionView" customModuleProvider="target"/>
+    </objects>
+</document>
